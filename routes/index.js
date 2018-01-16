@@ -11,6 +11,7 @@ router.get('/', function (req, res, next) {
   next();
 });
 
+//to test put firstname%20lastname
 router.get('/users/:name', function(req, res) {
     // var name = ;
     var list = tweetBank.find( {name: req.params.name} );

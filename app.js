@@ -1,10 +1,11 @@
 const express = require( 'express' );
 const morgan = require('morgan');
 const nunjucks = require('nunjucks');
+const routes = require('./routes');
 const app = express(); // creates an instance of an express application
 
 app.use(morgan('combined'))
-
+app.use("/", routes);
 // app.use(function(req, res, next) {
 //     //req.method: verb, req.url: route
 //     console.log(req.method, req.url);
@@ -18,12 +19,12 @@ app.use(morgan('combined'))
 //     next();
 // })
 
-app.get('/', function(req, res){
-    // res.send('Hello World!');
-    const people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
-    res.render( 'index', {title: 'Hall of Fame', people: people} );
-    next();
-});
+// app.get('/', function(req, res){
+//     // res.send('Hello World!');
+//     const people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
+//     res.render( 'index', {title: 'Hall of Fame', people: people} );
+//     next();
+// });
 
 // var locals = {
 //     title: 'An Example',

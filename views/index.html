@@ -23,6 +23,7 @@
     
       <!-- display tweets here -->
       {% for tweet in tweets %}
+        <li>{{tweet.name}}</li>
         <li>{{tweet.content}}</li>
       {% endfor %}
       

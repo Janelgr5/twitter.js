@@ -11,6 +11,12 @@ router.get('/', function (req, res, next) {
   next();
 });
 
+router.get('/users/:name', function(req, res) {
+    // var name = ;
+    var list = tweetBank.find( {name: req.params.name} );
+    res.render( 'index', { tweets: list } );
+  });
+
 // router.get("/stylesheets/style.css", function(req, res, next){
 //     // res.sendFile("/stylesheets/style.css", {root: _dirname + "/../public/"})
 //     next();
